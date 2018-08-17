@@ -13,7 +13,8 @@ class ApplicationController < Sinatra::Base
   
   post '/results' do 
      @size = params[:size]
-    @school = collegePicker(@size)
+     @region = params[:region]
+    @school = collegePicker(@size, @region)
     # @pic = getPic(@name)
     return erb :results 
   end 
